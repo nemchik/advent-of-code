@@ -1,9 +1,9 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-        "config:best-practices",
-        ":automergeAll",
-        ":maintainLockFilesWeekly"
-    ],
-    "baseBranches": ["main"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":maintainLockFilesWeekly",
+    ":automergeAll"
+  ],
+  "baseBranches": ["main"]
 }
