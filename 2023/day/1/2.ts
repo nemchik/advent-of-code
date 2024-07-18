@@ -26,7 +26,7 @@ async function myFileReader() {
       case "nine":
         return 9;
       default:
-        return parseInt(s);
+        return Number.parseInt(s);
     }
   }
   for await (const line of file.readLines()) {
@@ -40,7 +40,7 @@ async function myFileReader() {
       );
     if (f && l) {
       const s = `${getNumber(f[1])}${getNumber(l[1])}`;
-      t += parseInt(s);
+      t += Number.parseInt(s);
       console.table({line: i, match: j, first: f[1], last: l[1], sum: s, total: t});
       j++;
     }

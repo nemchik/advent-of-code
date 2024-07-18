@@ -10,7 +10,7 @@ async function myFileReader() {
     const l = /([0-9])[^0-9]*$/.exec(line);
     if (f && l) {
       const s = `${f[1]}${l[1]}`;
-      t += parseInt(s);
+      t += Number.parseInt(s);
       console.table({line: i, match: j, first: f[1], last: l[1], sum: s, total: t});
       j++;
     }

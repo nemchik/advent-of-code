@@ -15,7 +15,7 @@ async function myFileReader() {
     ];
     for (const result of resultMatches) {
       const [_, count, color] = result;
-      if (color == "red" || color == "green" || color == "blue") {
+      if (color === "red" || color === "green" || color === "blue") {
         if (Number(count) > allowed[color]) {
           possible = false;
         }

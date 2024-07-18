@@ -2,7 +2,7 @@ import { open } from "node:fs/promises";
 myFileReader();
 async function myFileReader() {
   const file = await open("./input.txt");
-  let lines = [];
+  const lines = [];
   let sum = 0;
   for await (const line of file.readLines()) {
     lines.push([...line]);
@@ -27,11 +27,12 @@ async function myFileReader() {
         let num = "";
         while (/[0-9]/.exec(lines[i][j])){
           partNumber = partNumber? partNumber: isPartNumber(i,j,lines);
-          num += ""+lines[i][j];
+          num += `${lines[i][j]}`;
           j++;
         }
         console.log(num, partNumber);
         if(partNumber){
+          // biome-ignore lint/style/useNumberNamespace: <explanation>
           sum += parseInt(num);
         }
       }

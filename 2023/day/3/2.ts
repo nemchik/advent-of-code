@@ -2,22 +2,23 @@ import { open } from "node:fs/promises";
 myFileReader();
 async function myFileReader() {
   const file = await open("./input.txt");
-  let lines = [];
+  const lines = [];
   let sum = 0;
   for await (const line of file.readLines()) {
     lines.push([...line]);
   }
-  function getFullNumber(j:number, line: string[]){
+  function getFullNumber(n:number, line: string[]){
+    let j=n;
     let num = "";
     while (/[0-9]/.exec(line[j-1])){j--;}
     while (/[0-9]/.exec(line[j])){
-      num += ""+line[j];
+      num += `${line[j]}`;
       j++;
     }
-    return parseInt(num);
+    return Number.parseInt(num);
   }
   function getGearParts(i:number, j:number, lines: string[][]){
-    let adjParts = [];
+    const adjParts = [];
     if (/[\*]/.exec(lines[i][j])) {
       let tl=false;
       let tm=false;
@@ -67,7 +68,7 @@ async function myFileReader() {
     for (let j = 0; j < lines[i].length; j++) {
       if (/[\*]/.exec(lines[i][j])) {
         const partNumbers = getGearParts(i,j,lines);
-        if(partNumbers.length==2){
+        if(partNumbers.length===2){
           const [partA, partB] = partNumbers;
           sum+=partA*partB;
         }
