@@ -11,7 +11,14 @@ async function myFileReader() {
     if (f && l) {
       const s = `${f[1]}${l[1]}`;
       t += Number.parseInt(s);
-      console.table({line: i, match: j, first: f[1], last: l[1], sum: s, total: t});
+      console.table({
+        line: i,
+        match: j,
+        first: f[1],
+        last: l[1],
+        sum: s,
+        total: t,
+      });
       j++;
     }
     i++;

@@ -2,7 +2,7 @@ import { open } from "node:fs/promises";
 myFileReader();
 async function myFileReader() {
   const file = await open("./input.txt");
-let totalPower = 0;
+  let totalPower = 0;
   for await (const line of file.readLines()) {
     const min = { red: 0, green: 0, blue: 0 };
     const [game, results] = line.split(":");

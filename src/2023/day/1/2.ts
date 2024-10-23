@@ -32,16 +32,23 @@ async function myFileReader() {
   for await (const line of file.readLines()) {
     const f =
       /^(?:(?![0-9]|one|two|three|four|five|six|seven|eight|nine).)*([0-9]|one|two|three|four|five|six|seven|eight|nine)/.exec(
-        line
+        line,
       );
     const l =
       /([0-9]|one|two|three|four|five|six|seven|eight|nine)(?:.(?<![0-9]|one|two|three|four|five|six|seven|eight|nine))*$/.exec(
-        line
+        line,
       );
     if (f && l) {
       const s = `${getNumber(f[1])}${getNumber(l[1])}`;
       t += Number.parseInt(s);
-      console.table({line: i, match: j, first: f[1], last: l[1], sum: s, total: t});
+      console.table({
+        line: i,
+        match: j,
+        first: f[1],
+        last: l[1],
+        sum: s,
+        total: t,
+      });
       j++;
     }
     i++;
