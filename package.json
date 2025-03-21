@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "prebuild": "npm run format",
+    "prebuild": "pnpm run format",
     "build": "tsc",
     "check": "biome check",
     "format": "biome check --write",
