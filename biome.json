@@ -21,5 +21,13 @@
   },
   "organizeImports": {
     "enabled": true
-  }
+  },
+  "overrides": [
+    {
+      "include": ["**/package.json"],
+      "formatter": {
+        "lineWidth": 1
+      }
+    }
+  ]
 }
