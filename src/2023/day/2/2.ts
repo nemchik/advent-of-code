@@ -1,4 +1,5 @@
 import { open } from "node:fs/promises";
+
 myFileReader();
 async function myFileReader() {
   const file = await open("./input.txt");

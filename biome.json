@@ -19,15 +19,5 @@
     "useEditorconfig": true,
     "indentStyle": "space"
   },
-  "organizeImports": {
-    "enabled": true
-  },
-  "overrides": [
-    {
-      "include": ["**/package.json"],
-      "formatter": {
-        "lineWidth": 1
-      }
-    }
-  ]
+  "assist": { "actions": { "source": { "organizeImports": "on" } } }
 }
