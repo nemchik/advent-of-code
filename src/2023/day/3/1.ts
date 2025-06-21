@@ -1,4 +1,5 @@
 import { open } from "node:fs/promises";
+
 myFileReader();
 async function myFileReader() {
   const file = await open("./input.txt");
@@ -64,8 +65,7 @@ async function myFileReader() {
         }
         console.log(num, partNumber);
         if (partNumber) {
-          // biome-ignore lint/style/useNumberNamespace: <explanation>
-          sum += parseInt(num);
+          sum += Number.parseInt(num);
         }
       }
     }

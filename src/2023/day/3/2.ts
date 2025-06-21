@@ -1,4 +1,5 @@
 import { open } from "node:fs/promises";
+
 myFileReader();
 async function myFileReader() {
   const file = await open("./input.txt");
@@ -21,7 +22,7 @@ async function myFileReader() {
   }
   function getGearParts(i: number, j: number, lines: string[][]) {
     const adjParts = [];
-    if (/[\*]/.exec(lines[i][j])) {
+    if (/[*]/.exec(lines[i][j])) {
       let tl = false;
       let tm = false;
       let tr = false;
@@ -134,7 +135,7 @@ async function myFileReader() {
   }
   for (let i = 0; i < lines.length; i++) {
     for (let j = 0; j < lines[i].length; j++) {
-      if (/[\*]/.exec(lines[i][j])) {
+      if (/[*]/.exec(lines[i][j])) {
         const partNumbers = getGearParts(i, j, lines);
         if (partNumbers.length === 2) {
           const [partA, partB] = partNumbers;
