@@ -24,7 +24,7 @@
     ]
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.6",
+    "@biomejs/biome": "2.2.7",
     "@types/node": "22.18.12",
     "git-pull-run": "1.6.2",
     "husky": "9.1.7",
